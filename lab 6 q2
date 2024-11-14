@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Lab6Q2 {
+    public static void main(String[]args){
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter the line");
+        String sent = in.nextLine();
+        sent = sent.toUpperCase();
+
+        StringBuilder line = new StringBuilder(sent);
+        line.reverse();
+
+        // Step c: Replace specific letters with symbols
+        for (int i = 0; i < line.length(); i++) {
+            if (line.charAt(i) == 'O') {
+                line.setCharAt(i, '0');
+            }
+            else if (line.charAt(i) == 'S') {
+                line.setCharAt(i, '$');
+            }
+            else if (line.charAt(i) == 'L') {
+                line.setCharAt(i, '1');
+            }
+        }
+        line.insert(0, "**");
+        line.append("**");
+        System.out.println("The Result: "+line);
+    }
+}
